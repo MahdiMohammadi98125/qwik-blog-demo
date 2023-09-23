@@ -1,5 +1,5 @@
 import { component$, useStylesScoped$, Slot } from "@builder.io/qwik";
-import modalStyles from "./modal.css";
+import modalStyles from "./modal.css?inline";
 import type { PropFunction } from "@builder.io/qwik";
 
 interface modalProps {
