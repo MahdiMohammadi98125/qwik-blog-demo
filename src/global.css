@@ -1,0 +1,108 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --theme-yellow: #f6cd25;
+  --theme-red: #dc1644;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #eee;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: "Geo";
+  font-weight: bold;
+  margin: 0;
+}
+
+p {
+  color: #777;
+}
+
+/* layout style */
+.container {
+  max-width: 1260px;
+  margin: 40px auto;
+  padding: 10px;
+}
+
+footer {
+  padding: 20px;
+  text-align: center;
+  border: 1px solid #eee;
+}
+
+/* buttons */
+button {
+  background-color: var(--theme-red);
+  border: 0;
+  padding: 8px 10px;
+  border-radius: 4px;
+  color: white;
+  cursor: pointer;
+  font-family: "Poppins";
+}
+
+/* blog grid */
+.blogs {
+  margin: 40px 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 20px;
+}
+
+.blogs a:link,
+a:visited {
+  text-decoration: none !important;
+  background-color: #f6cd25;
+  color: #fff;
+  padding: 10px;
+  transition: background 0.1s ease-in;
+}
+
+.blogs a:hover,
+a:active {
+  background-color: #ffcc0085;
+}
+
+.blog {
+  margin: 100px auto;
+  max-width: 50%;
+}
+
+.blogs .blog-container {
+  border: 1px solid #777;
+  padding: 30px;
+}
+
+/* responsive design */
+@media screen and (max-width: 900px) {
+  .blogs {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .blogs {
+    margin: 10px 0;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .blog-container {
+    border: 1px solid #2c2b2b;
+    padding: 10px;
+  }
+}
