@@ -17,15 +17,17 @@ export default component$(() => {
         onPending={() => <p>loading...</p>}
         onResolved={(comments) => (
           <div class="blogs">
-            {comments.map((comment) => (
-              <Card key={comment.id}>
-                <h1 q:slot="title">{comment.name}</h1>
-                <p q:slot="content">{comment.body.slice(0, 50) + "..."}</p>
-                <Link href={"/blog/" + comment.id} q:slot="footer">
-                  Read More
-                </Link>
-              </Card>
-            ))}
+            {comments.map(
+              (comment: { name: string; body: string; id: number }) => (
+                <Card key={comment.id}>
+                  <h1 q:slot="title">{comment.name}</h1>
+                  <p q:slot="content">{comment.body.slice(0, 50) + "..."}</p>
+                  <Link href={"/blog/" + comment.id} q:slot="footer">
+                    Read More
+                  </Link>
+                </Card>
+              )
+            )}
           </div>
         )}
       />
